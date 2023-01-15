@@ -1,0 +1,55 @@
+.input-container {
+	@apply w-full max-w-sm grid gap-1;
+
+	label.required::after {
+		content: ' *';
+		@apply text-danger-d2;
+	}
+
+	input {
+		@apply w-full px-2 py-1 border bg-neutral-l4 rounded border-neutral-base;
+		&:disabled {
+			@apply bg-neutral-l3 cursor-not-allowed;
+		}
+	}
+
+	.input-password {
+		position: relative;
+		input {
+			@apply pr-9;
+		}
+		button {
+			@apply absolute right-3 h-4 w-4;
+			bottom: calc(50% - 8px);
+		}
+	}
+}
+
+.input-error {
+	background-color: var(--danger-l3) !important;
+	border-color: var(--danger-d2) !important;
+
+	&:-webkit-autofill,
+	&:-webkit-autofill:hover,
+	&:-webkit-autofill:focus,
+	&:-webkit-autofill:active {
+		-webkit-box-shadow: 0 0 0 30px var(--danger-l3) inset !important;
+	}
+
+	&-banner {
+		color: var(--danger-d2);
+		@apply grid items-center gap-1;
+		grid-template-columns: max-content 1fr;
+
+		svg {
+			height: 18px;
+			width: 18px;
+		}
+
+		span {
+			font-size: 0.75rem;
+			line-height: 1.46667;
+			font-weight: 500;
+		}
+	}
+}

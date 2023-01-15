@@ -1,0 +1,8 @@
+.signup-page {
+	@apply h-full grid items-center justify-items-center content-center;
+	grid-auto-rows: max-content;
+
+	&-navigate {
+		@apply flex;
+	}
+}

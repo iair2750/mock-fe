@@ -1,0 +1,4 @@
+.header {
+	@apply h-14 sticky top-0 grid gap-2 items-center text-text-negative;
+	grid-template-columns: 1fr max-content;
+}

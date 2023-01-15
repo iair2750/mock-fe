@@ -1,0 +1,26 @@
+.button {
+	@apply px-4 py-1.5 rounded flex items-center;
+
+	&-primary {
+		@apply bg-primary-d1 text-text-negative;
+		&:hover {
+			@apply bg-primary-base;
+		}
+	}
+
+	&-secondary {
+		@apply bg-secondary-d1 text-text-negative;
+		&:hover {
+			@apply bg-secondary-base;
+		}
+	}
+
+	&-link {
+		padding: unset;
+		@apply underline px-1;
+	}
+
+	&-classic {
+		padding: unset;
+	}
+}
