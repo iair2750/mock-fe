@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--header-size: 40px;
+	--footer-size: 40px;
+}
+
+body {
+	@apply h-screen overflow-auto bg-neutral-l4 text-text-positive;
+	& *:focus {
+		outline: 0.2rem solid;
+		outline-color: rgba(66, 153, 225, 0.5);
+	}
+}
+
+#root,
+#page-container {
+	@apply h-full;
+}
+
+#app-header-footer {
+	@apply min-h-full grid;
+	grid-template-rows: max-content 1fr max-content;
+}

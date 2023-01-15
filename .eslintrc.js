@@ -13,7 +13,7 @@ module.exports = {
     'standard-with-typescript',
     'prettier',
   ],
-  ignorePatterns: ['.eslintrc.js'],
+  ignorePatterns: ['.eslintrc.js', '*.config.js'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -73,7 +73,10 @@ module.exports = {
     'react/require-default-props': 'off',
     'react/jsx-no-useless-fragment': ['error', {'allowExpressions': true}],
     'prettier/prettier': 'error',
-    'react/button-has-type': 'off'
+    'react/button-has-type': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
+    'react-hooks/exhaustive-deps': 'off',
+    '@typescript-eslint/ban-types': 'off',
   },
   settings: {
     'import/resolver': {
