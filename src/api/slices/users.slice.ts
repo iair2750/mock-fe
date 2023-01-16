@@ -1,7 +1,7 @@
 import { RequestCreateUser, ResponseUser } from 'api/api.types';
 import { apiSlice } from './api.slice';
 
-export const authApiAtlasSlice = apiSlice.injectEndpoints({
+export const userApiSlice = apiSlice.injectEndpoints({
 	endpoints: builder => ({
 		createUser: builder.mutation<ResponseUser, RequestCreateUser>({
 			query: user => ({
@@ -13,4 +13,4 @@ export const authApiAtlasSlice = apiSlice.injectEndpoints({
 	}),
 });
 
-export const { useCreateUserMutation } = authApiAtlasSlice;
+export const { useCreateUserMutation } = userApiSlice;

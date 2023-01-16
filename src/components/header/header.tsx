@@ -8,14 +8,13 @@ import './header.scss';
 export const Header: FC = () => {
 	const navigate = useNavigate();
 	const token = useAppSelector(store => store.auth.accessToken);
-	const user = useAppSelector(store => store.auth.user);
 	const dispatch = useAppDispatch();
 
 	return (
 		<BaseView className='header' bg='var(--primary-d2)'>
 			<div>{token && 'links'}</div>
 			<div>
-				{user ? (
+				{token ? (
 					<Button variant='secondary' onClick={() => dispatch(logout())}>
 						LOGOUT
 					</Button>

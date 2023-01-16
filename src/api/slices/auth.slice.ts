@@ -1,4 +1,4 @@
-import { ResponseAccountLogin } from 'api/api.types';
+import { ResponseAccountLogin, ResponseUser } from 'api/api.types';
 import { apiSlice } from './api.slice';
 
 export interface ApiAccountLoginParams {
@@ -6,7 +6,7 @@ export interface ApiAccountLoginParams {
 	password: string;
 }
 
-export const authApiAtlasSlice = apiSlice.injectEndpoints({
+export const authApiSlice = apiSlice.injectEndpoints({
 	endpoints: builder => ({
 		login: builder.mutation<ResponseAccountLogin, ApiAccountLoginParams>({
 			query: credentials => ({
@@ -14,8 +14,17 @@ export const authApiAtlasSlice = apiSlice.injectEndpoints({
 				method: 'POST',
 				body: credentials,
 			}),
+			onQueryStarted(arg, { dispatch, queryFulfilled }) {
+				queryFulfilled.then(res =>
+					dispatch(authApiSlice.util.upsertQueryData('getUserMe', undefined, res.data.user))
+				);
+			},
+		}),
+		getUserMe: builder.query<ResponseUser, void>({
+			query: () => '/users/me',
+			providesTags: user => (user ? [{ type: 'User', id: user.id }] : ['User']),
 		}),
 	}),
 });
 
-export const { useLoginMutation } = authApiAtlasSlice;
+export const { useLoginMutation, useGetUserMeQuery } = authApiSlice;
