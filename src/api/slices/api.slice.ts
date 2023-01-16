@@ -14,7 +14,7 @@ const baseQuery = fetchBaseQuery({
 });
 
 export const apiSlice = createApi({
-	reducerPath: 'directoryApi',
+	reducerPath: 'mock-be',
 	baseQuery: getBaseQueryWithReauth(baseQuery),
 	tagTypes: ['User'],
 	endpoints: builder => ({
