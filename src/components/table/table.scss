@@ -1,0 +1,26 @@
+table {
+	@apply grid;
+
+	thead,
+	tbody,
+	tr {
+		@apply contents;
+	}
+
+	th,
+	td {
+		@apply flex items-center py-2 px-2;
+	}
+
+	th {
+		@apply border-b border-primary-d1 mb-1;
+	}
+
+	td {
+		@apply first-of-type:rounded-l-md last-of-type:rounded-r-md;
+	}
+}
+
+.table-no-data {
+	@apply mt-4 text-xl flex justify-center col-start-1 col-end-[-1];
+}

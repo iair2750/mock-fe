@@ -1,0 +1,10 @@
+type RelativeLengthFont = `${number}${'cap' | 'ch' | 'em' | 'ex' | 'ic' | 'lh' | 'rem' | 'rlh'}`;
+type RelativeLengthVp = `${number}${'vh' | 'vw' | 'vmax' | 'vmin' | 'vb' | 'vi'}`;
+type AbsoluteLength = `${number}${'px' | 'cm' | 'mm' | 'Q' | 'in' | 'pc' | 'pt'}`;
+export type Length = RelativeLengthFont | RelativeLengthVp | AbsoluteLength;
+export type Percentage = `${number}%`;
+export type Flex = `${number}fr`;
+export type Keywords = 'max-content' | 'min-content' | 'auto';
+type MinmaxParam = Length | Percentage | Flex | Keywords;
+export type Minmax = `minmax(${MinmaxParam}, ${MinmaxParam})`;
+export type TLength = Length | Percentage | Flex | Keywords | Minmax;

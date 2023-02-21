@@ -1,0 +1,34 @@
+.modal {
+	@apply w-screen h-screen bg-body grid grid-rows-[auto_1fr_max-content];
+
+	& > * {
+		@apply py-2 px-4;
+	}
+
+	&-small {
+		@apply max-w-sm max-h-64;
+	}
+
+	&-custom {
+		@apply max-w-[100vw] max-h-screen w-max h-max;
+	}
+
+	&-title {
+		@apply bg-primary-d1 text-text-invert grid items-center grid-cols-[1fr_max-content];
+
+		span {
+			@apply text-xl;
+		}
+
+		button {
+			@apply p-2;
+			svg {
+				@apply h-6;
+			}
+		}
+	}
+
+	&-actions {
+		@apply flex flex-wrap gap-2 flex-row-reverse border-t border-neutral-l3;
+	}
+}

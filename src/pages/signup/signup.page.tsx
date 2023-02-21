@@ -18,7 +18,7 @@ export const SignUpPage: FC = () => {
 			<SignupForm />
 			<div className='signup-page-navigate'>
 				<span>You already have an account? Login in</span>
-				<ButtonLink to='/login'>here</ButtonLink>
+				<ButtonLink to='/account/login'>here</ButtonLink>
 			</div>
 		</div>
 	);

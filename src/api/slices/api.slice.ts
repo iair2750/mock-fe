@@ -16,11 +16,11 @@ const baseQuery = fetchBaseQuery({
 export const apiSlice = createApi({
 	reducerPath: 'mock-be',
 	baseQuery: getBaseQueryWithReauth(baseQuery),
-	tagTypes: ['User'],
+	tagTypes: ['User', 'Schema'],
 	endpoints: builder => ({
 		logout: builder.mutation<null, void>({
 			queryFn: () => ({ data: null }),
-			invalidatesTags: ['User'],
+			invalidatesTags: ['User', 'Schema'],
 		}),
 	}),
 });

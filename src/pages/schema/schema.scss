@@ -1,0 +1,5 @@
+.schema-page {
+	&-header {
+		@apply grid grid-cols-[1fr_max-content] items-center;
+	}
+}

@@ -1,4 +1,4 @@
-import { RequestCreateUser, ResponseUser } from 'api/api.types';
+import { RequestCreateUser, ResponseUser } from 'api';
 import { apiSlice } from './api.slice';
 
 export const userApiSlice = apiSlice.injectEndpoints({

@@ -37,3 +37,14 @@ export interface ResponseAccountLogin {
 	user: ResponseUser;
 	token: string;
 }
+
+export interface RequestCreateSchema {
+	name: string;
+}
+
+export interface ResponseSchema {
+	id: string;
+	name: string;
+	createdDateTime: Date;
+	owner: ResponseUser;
+}

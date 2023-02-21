@@ -3,7 +3,7 @@ import { Link, LinkProps } from 'react-router-dom';
 
 import './button.scss';
 
-export type ButtonVariant = 'classic' | 'primary' | 'secondary' | 'link';
+export type ButtonVariant = 'classic' | 'primary' | 'ghost' | 'secondary' | 'link';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	variant?: ButtonVariant;
@@ -14,31 +14,36 @@ export interface ButtonLinkProps extends LinkProps, React.RefAttributes<HTMLAnch
 }
 
 export const getVariantClassName = (variant?: ButtonVariant, isLink?: boolean): string => {
+	let className;
 	switch (variant) {
 		case 'classic':
-			return 'button-classic';
+			return '';
 		case 'primary':
-			return 'button-primary';
+			className = 'button-primary';
+			break;
+		case 'ghost':
+			className = 'button-ghost';
+			break;
 		case 'secondary':
-			return 'button-secondary';
+			className = 'button-secondary';
+			break;
 		case 'link':
-			return 'button-link';
+			className = 'button-link';
+			break;
 		default:
-			return isLink ? 'button-link' : 'button-primary';
+			className = isLink ? 'button-link' : 'button-primary';
 	}
+	return `button ${className}`;
 };
 
 export const Button: FC<ButtonProps> = ({ variant, className, children, ...buttonProps }) => (
-	<button className={`button ${getVariantClassName(variant)} ${className ?? ''}`} {...buttonProps}>
+	<button className={`${getVariantClassName(variant)} ${className ?? ''}`} {...buttonProps}>
 		{children}
 	</button>
 );
 
 export const ButtonLink: FC<ButtonLinkProps> = ({ variant, children, className, ...linkProps }) => (
-	<Link
-		{...linkProps}
-		className={`button ${getVariantClassName(variant, true)} ${className ?? ''}`}
-	>
+	<Link {...linkProps} className={`${getVariantClassName(variant, true)} ${className ?? ''}`}>
 		{children}
 	</Link>
 );

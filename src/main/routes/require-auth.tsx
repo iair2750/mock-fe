@@ -6,5 +6,5 @@ export const RequireAuth: FC = () => {
 	const token = useAppSelector(store => store.auth.accessToken);
 	const location = useLocation();
 
-	return token ? <Outlet /> : <Navigate to='/login' state={{ from: location }} replace />;
+	return token ? <Outlet /> : <Navigate to={`/account/login?from=${location.pathname}`} replace />;
 };

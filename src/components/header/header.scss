@@ -1,4 +1,27 @@
 .header {
-	@apply h-14 sticky top-0 grid gap-2 items-center text-text-negative;
+	@apply h-14 sticky top-0 grid gap-2 items-center text-text-invert;
 	grid-template-columns: 1fr max-content;
+
+	&-navigation {
+		@apply flex gap-4;
+
+		& > * {
+			@apply px-1.5 py-0.5;
+		}
+	}
+
+	&-link {
+		@apply hover:border-secondary-base hover:border-opacity-50 hover:border-b-2;
+		&-active {
+			@apply border-secondary-base border-b-2;
+		}
+	}
+
+	&-user-menu {
+		@apply flex p-2 rounded-[50%] bg-secondary-d1 text-neutral-d3 hover:bg-secondary-base;
+
+		svg {
+			@apply w-5 h-5;
+		}
+	}
 }
