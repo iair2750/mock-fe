@@ -19,26 +19,27 @@
 			@apply pr-9;
 		}
 		button {
-			@apply absolute right-3 h-4 w-4;
+			@apply absolute right-3;
 			bottom: calc(50% - 8px);
+			svg {
+				@apply h-4 w-4;
+			}
 		}
 	}
 }
 
 .input-error {
-	background-color: var(--danger-l3) !important;
-	border-color: var(--danger-d2) !important;
+	@apply bg-danger-l3 border-danger-d2 #{!important};
 
 	&:-webkit-autofill,
 	&:-webkit-autofill:hover,
 	&:-webkit-autofill:focus,
 	&:-webkit-autofill:active {
-		-webkit-box-shadow: 0 0 0 30px var(--danger-l3) inset !important;
+		-webkit-box-shadow: 0 0 0 30px rgb(var(--danger-l3)) inset !important;
 	}
 
 	&-banner {
-		color: var(--danger-d2);
-		@apply grid items-center gap-1;
+		@apply grid items-center gap-1 text-danger-d2;
 		grid-template-columns: max-content 1fr;
 
 		svg {

@@ -1,45 +1,45 @@
-:root {
-	--text-positive: #1a1a1a;
-	--text-negative: #f2f2f2;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-	--neutral-d3: #181a1b;
-	--neutral-d2: #3c4144;
-	--neutral-d1: #60686c;
-	--neutral-base: #798086;
-	--neutral-l1: #949a9e;
-	--neutral-l2: #afb3b6;
-	--neutral-l3: #d7d9db;
-	--neutral-l4: #fcfdfd;
+@layer base {
+	:root {
+		--text-base: 26, 26, 26;
+		--text-invert: 242, 242, 242;
 
-	--primary-d3: #262640;
-	--primary-d2: #393960;
-	--primary-d1: #4d4d80;
-	--primary-base: #60609f;
-	--primary-l1: #8080b3;
-	--primary-l2: #9f9fc6;
-	--primary-l3: #bfbfd9;
-	--primary-l4: #dfdfec;
+		--neutral-d3: 23, 26, 28;
+		--neutral-d2: 60, 65, 68;
+		--neutral-d1: 96, 104, 108;
+		--neutral-base: 121, 128, 134;
+		--neutral-l1: 148, 154, 158;
+		--neutral-l2: 175, 179, 182;
+		--neutral-l3: 215, 217, 219;
+		--neutral-l4: 252, 253, 253;
 
-	--secondary-d3: #1a4b4c;
-	--secondary-d2: #277172;
-	--secondary-d1: #349698;
-	--secondary-base: #41bcbe;
-	--secondary-l1: #67c9cb;
-	--secondary-l2: #8dd7d8;
-	--secondary-l3: #b3e4e5;
-	--secondary-l4: #d9f2f2;
+		--primary-d3: 38, 38, 64;
+		--primary-d2: 57, 57, 96;
+		--primary-d1: 77, 77, 128;
+		--primary-base: 96, 96, 159;
+		--primary-l1: 128, 128, 179;
+		--primary-l2: 159, 159, 198;
+		--primary-l3: 191, 191, 217;
+		--primary-l4: 223, 223, 236;
 
-	--danger-d3: #5e080c;
-	--danger-d2: #8d0c13;
-	--danger-d1: #bc1019;
-	--danger-base: #eb141f;
-	--danger-l1: #ef434c;
-	--danger-l2: #f58a8f;
-	--danger-l3: #fbd0d2;
+		--secondary-d3: 8, 92, 94;
+		--secondary-d2: 12, 139, 141;
+		--secondary-d1: 16, 185, 188;
+		--secondary-base: 18, 230, 237;
+		--secondary-l1: 65, 235, 241;
+		--secondary-l2: 113, 240, 244;
+		--secondary-l3: 160, 245, 248;
+		--secondary-l4: 208, 250, 251;
 
-	--outline: rgba(66, 153, 225, 0.5);
-}
-
-html[data-theme='dark'] {
-	--primary-base: black;
+		--danger-d3: 94, 8, 12;
+		--danger-d2: 141, 12, 19;
+		--danger-d1: 188, 16, 25;
+		--danger-base: 235, 20, 31;
+		--danger-l1: 239, 67, 76;
+		--danger-l2: 245, 138, 143;
+		--danger-l3: 251, 208, 210;
+	}
 }

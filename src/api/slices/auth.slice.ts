@@ -1,4 +1,4 @@
-import { ResponseAccountLogin, ResponseUser } from 'api/api.types';
+import { ResponseAccountLogin, ResponseUser } from 'api';
 import { apiSlice } from './api.slice';
 
 export interface ApiAccountLoginParams {
@@ -27,4 +27,4 @@ export const authApiSlice = apiSlice.injectEndpoints({
 	}),
 });
 
-export const { useLoginMutation, useGetUserMeQuery } = authApiSlice;
+export const { useLoginMutation, useGetUserMeQuery, useLazyGetUserMeQuery } = authApiSlice;
